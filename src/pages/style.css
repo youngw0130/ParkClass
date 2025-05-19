@@ -1,0 +1,329 @@
+@font-face {
+    font-family: 'Ownglyph_corncorn-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2412-1@1.0/Ownglyph_corncorn-Rg.woff2') format('woff2');
+}
+*{
+    font-family: 'Ownglyph_corncorn-Rg';
+}
+.App {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 80vh;
+  position: relative;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 헤더 스타일 */
+header {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e2e2e2;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: #64c964;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+header button {
+  background-color: #64c964;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+header button:hover {
+  background-color: #4fa54f;
+}
+
+/* 버튼 스타일 */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-cancel {
+  background-color: #ececec;
+  color: #555;
+}
+
+.btn-cancel:hover {
+  background-color: #ddd;
+}
+
+.btn-submit {
+  background-color: #64c964;
+  color: white;
+}
+
+.btn-submit:hover {
+  background-color: #4fa54f;
+}
+
+.btn-danger {
+  background-color: #fd565f;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #e64c54;
+}
+
+/* 다이어리 아이템 스타일 */
+.diary-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  padding: 15px;
+  margin-bottom: 15px;
+  transition: transform 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.diary-item:hover {
+  transform: translateY(-3px);
+}
+
+.diary-date {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.diary-emotion {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  font-weight: bold;
+}
+
+.emotion-img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: white;
+}
+
+.emotion-1 { background-color: #64c964; } /* 완전 좋음 */
+.emotion-2 { background-color: #9dd772; } /* 좋음 */
+.emotion-3 { background-color: #fdce17; } /* 그럭저럭 */
+.emotion-4 { background-color: #fd8446; } /* 나쁨 */
+.emotion-5 { background-color: #fd565f; } /* 끔찍함 */
+
+.diary-content {
+  font-size: 16px;
+  margin-top: 10px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}
+
+.empty-list {
+  text-align: center;
+  margin-top: 50px;
+  color: #aaa;
+}
+
+/* 일기 작성/수정 폼 스타일 */
+.diary-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #555;
+}
+
+.date-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.emotion-select {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.emotion-item {
+  width: 18%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 0;
+  border-radius: 5px;
+}
+
+.emotion-item.selected {
+  background-color: #efefef;
+}
+
+.emotion-img-large {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.emotion-desc {
+  font-size: 12px;
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* 다이어리 상세 페이지 스타일 */
+.diary-detail {
+  margin-top: 20px;
+}
+
+.diary-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.emotion-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.big-emotion-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: white;
+  margin-right: 20px;
+}
+
+.diary-detail-date {
+  font-size: 16px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.diary-detail-content {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+/* 메뉴 버튼 스타일 */
+.menu-button {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: #555;
+  font-size: 16px;
+}
+
+.menu-button:hover {
+  color: #64c964;
+}
+
+/* 404 페이지 스타일 */
+.not-found {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.not-found h1 {
+  color: #fd565f;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.not-found p {
+  color: #555;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* 필터 및 정렬 옵션 스타일 */
+.control-menu {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.control-menu select {
+  width: 150px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: white;
+}
